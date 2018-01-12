@@ -707,6 +707,32 @@
 
               }
 
+              // function asyncScrapeTry(tryUrl){
+
+              //   let scrapeTry = new XMLHttpRequest();
+
+                
+              //   scrapeTry.open("GET", tryUrl, true);
+              //   scrapeTry.setRequestHeader("Referer",tryUrl);
+
+              //   scrapeTry.onerror = function(){
+
+              //     console.log("error bro");
+              //   }
+
+              //   scrapeTry.onload = function(){
+              //     if(this.status == 200){
+
+              //       cosnole.log(this.repsonseText);
+
+              //     }
+
+              //   }
+
+              //   scrapeTry.send();
+
+              // }
+
           //search for microsoft external links
           function runGoogleAnalytics(enteredUrl){
             testUrl = "https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url="+enteredUrl+"&strategy=mobile&key=AIzaSyB_9OpSpNIFlv6VEQjRzkeOTjxKPOdErqU";
@@ -763,6 +789,7 @@
           //execute the request
           function execInput(enteredUrl){
 
+            //asyncScrapeTry(enteredUrl);
             $(".theloader").show(500);
 
               xhr = new XMLHttpRequest();
@@ -786,6 +813,7 @@
                     $(".url-extract").addClass("url-extract-hammertime");
 
                   responseSource = this.responseText;
+                  console.log(responseSource);
                   // run the func
                   runGoogleAnalytics(enteredUrl);
                   checkAccesibiltyAndPass(responseSource);
